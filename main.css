@@ -1,0 +1,380 @@
+/*--------------------------------------------------------------
+#
+  Preloader
+  --------------------------------------------------------------*/
+#preloader {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99999;
+}
+
+#preloader:before,
+#preloader:after {
+  content: "";
+  background-color: #000000;
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  height: 100%;
+  transition: all 0.3s ease 0s;
+  z-index: -1;
+}
+
+#preloader:after {
+  left: auto;
+  right: 0;
+}
+
+#preloader .line {
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  width: 1px;
+  height: 280px;
+  transition: all 0.8s ease 0s;
+}
+
+#preloader .line:before {
+  content: "";
+  position: absolute;
+  background-color: #ffffff;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 0%;
+  transform: translateY(-50%);
+  animation: lineincrease 1000ms ease-in-out 0s forwards;
+}
+
+#preloader .line:after {
+  content: "";
+  position: absolute;
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  transform: translateY(-100%);
+  animation: linemove 1200ms linear 0s infinite;
+  animation-delay: 2000ms;
+}
+
+#preloader.loaded .line {
+  opacity: 0;
+  height: 100% !important;
+}
+
+#preloader.loaded .line:after {
+  opacity: 0;
+}
+
+#preloader.loaded:before,
+#preloader.loaded:after {
+  animation: preloaderfinish 300ms ease-in-out 500ms forwards;
+}
+
+@keyframes lineincrease {
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes linemove {
+  0% {
+    transform: translateY(200%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes preloaderfinish {
+  0% {
+    width: 5 0%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+#content {
+  display: contents;
+}
+
+section {
+  padding: 20px;
+}
+body {
+  background-image: url("assets/img/background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #f0f0f0;
+}
+
+/* Navigation bar styles */
+.navbar {
+  background-color: rgba(0, 162, 255, 0.8);
+  animation: fadeIn 0.5s ease-out;
+  width: 100%;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.navbar-brand img {
+  margin-right: 15px;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%); /* Move the navbar out of view */
+  transition: transform 0.3s ease; /* Smooth transition for hide/show */
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+.brand-title {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 30px;
+}
+.address {
+  font-size: 0.875rem;
+  color: #ffffff;
+}
+
+.info-icons {
+  margin-top: 0px;
+}
+
+.info-icons a {
+  color: white; /* Icon color */
+  margin: 0 0px; /* Spacing between icons */
+  text-decoration: none; /* Remove underline */
+  font-size: 24px; /* Adjust icon size */
+}
+
+.info-icons a:hover {
+  color: #000000; /* Change icon color on hover */
+}
+
+/* Table styles */
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tr {
+  background-color: rgba(0, 0, 0, 0.701);
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #000000;
+  font-size: 20px;
+}
+
+.table thead th {
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #000000af;
+}
+
+.table tbody:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.table img {
+  max-width: 400px;
+  /* Atur ukuran gambar agar lebih kecil jika diperlukan */
+  height: auto;
+  /* Biarkan tinggi otomatis menjaga proporsi gambar */
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-3 {
+  margin-top: 20px;
+}
+
+.mb-3 {
+  margin-bottom: 20px;
+}
+
+/* Additional styles */
+.card-header {
+  background-color: rgba(0, 0, 0, 0.701);
+  color: #ffffff;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  margin-top: 20px auto;
+  background-color: rgba(255, 255, 255, 0.349);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Keyframes untuk animasi fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Kelas animasi fade-in */
+.fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+footer {
+  text-align: center;
+  padding: 7px;
+  background-color: rgb(0, 162, 255);
+  color: white;
+  width: 100%;
+  z-index: 1000;
+  margin-top: 30px;
+  bottom: 0;
+  position: fixed;
+  border-radius: 7px 7px 0 0;
+  transition: transform 0.3s ease; /* Smooth transition for hide/show */
+}
+
+footer.hidden {
+  transform: translateY(100%); /* Moves footer out of view */
+}
+
+footer p {
+  margin: 0; /* Removes default margin from paragraphs */
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white; /* Icon color */
+  margin: 0 10px; /* Spacing between icons */
+  text-decoration: none; /* Remove underline */
+  font-size: 24px; /* Adjust icon size */
+}
+
+.social-icons a:hover {
+  color: #000000; /* Change icon color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .navbar-brand img {
+    margin-right: 10px;
+  }
+
+  .brand-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .table th,
+  .table td {
+    font-size: 18px;
+  }
+
+  .card-header {
+    font-size: 20px;
+  }
+
+  .brand-title {
+    font-size: 22px;
+  }
+
+  .navbar-brand img {
+    width: 40px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    width: 35px;
+    height: auto;
+  }
+
+  .brand-title {
+    font-size: 20px;
+  }
+
+  .table th,
+  .table td {
+    font-size: 16px;
+  }
+
+  .card-header {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .info-icons a {
+    font-size: 20px;
+    margin: 0 5px;
+  }
+
+  .table {
+    font-size: 14px;
+  }
+
+  .navbar-brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .brand-text {
+    align-items: center;
+  }
+
+  .brand-title {
+    font-size: 18px;
+  }
+
+  .social-icons a {
+    font-size: 20px;
+  }
+}

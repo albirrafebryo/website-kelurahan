@@ -1,0 +1,267 @@
+body {
+  background-image: url("assets/img/background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #f0f0f0;
+}
+/* Navigation bar styles */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.navbar-brand img {
+  margin-right: 15px;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+.brand-title {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 30px;
+}
+.address {
+  font-size: 0.875rem;
+  color: #ffffff;
+}
+
+/* Style dasar untuk tombol */
+.btn {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Gaya untuk tombol warning */
+.btn-warning {
+  background-color: #f0ad4e;
+  color: #000000;
+}
+
+.btn-warning:hover {
+  background-color: #ec971f;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+/* Gaya untuk tombol danger */
+.btn-danger {
+  background-color: #d9534f;
+  color: #000000;
+}
+
+.btn-danger:hover {
+  background-color: #c9302c;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+.logout-btn {
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+  color: #000000;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: white;
+  margin-top: 10px;
+}
+
+.btn-success:hover {
+  background-color: #156126;
+}
+
+/* Table styles */
+
+.table {
+  margin-top: 10px;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.519);
+  border: 1px solid #000000;
+}
+
+.table .table-dark {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.table img {
+  max-width: 400px;
+  /* Atur ukuran gambar agar lebih kecil jika diperlukan */
+  height: auto;
+  /* Biarkan tinggi otomatis menjaga proporsi gambar */
+}
+/* Modal styles */
+.modal-header {
+  background-color: #0080ff;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  text-align: center;
+}
+* Form container */ #formData {
+  padding: 20px;
+  background-color: #003e7d; /* Light background for form */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Form labels */
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333; /* Dark text color for labels */
+}
+
+/* Form controls */
+.form-control {
+  border: px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Input field focus */
+.form-control:focus {
+  border-color: #000000;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+/* File input */
+input[type="file"] {
+  padding: 3px; /* Reduce padding for file input */
+}
+
+/* Buttons in the modal footer */
+.modal-footer {
+  padding: 15px;
+  background-color: #f1f1f1; /* Light background for modal footer */
+  border-top: 1px solid #e5e5e5;
+}
+
+.modal-footer .btn {
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  border-radius: 10px;
+  margin: 11px 4px 4px 10px;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #44494d;
+  border-color: #4a4f55;
+}
+
+.modal-footer .btn-success {
+  background-color: #08bd2f;
+  border-color: #08bd2f;
+  border-radius: 10px;
+}
+
+.modal-footer .btn-success:hover {
+  background-color: #0b5309;
+  border-color: #0b5309;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-3 {
+  margin-top: 20px;
+}
+
+.mb-3 {
+  margin-bottom: 20px;
+}
+
+/* Additional styles */
+.card-header {
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.card {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.349);
+}
+
+/* Keyframes untuk animasi fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Kelas animasi fade-in */
+.fade-in {
+  animation: fadeIn 1s ease-out;
+}
